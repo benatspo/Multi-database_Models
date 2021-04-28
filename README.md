@@ -5,7 +5,7 @@ It permits to (rebuild or) use the surveyed database to replicate the observed r
 
 Link to download the SQLite database containing all the data for the replication: [SQL_NoSQL_Survey.db](https://figshare.com/s/fb5c35279ab68ec52ffc)
 
-In the resources folder, you can find:
+In the resources you can find:
 1. A database folder containing CSV files with the the content of the different tables/views of the full database:
    - Tables:
      - SQL_NOSQL_DATASET_REPOSITORIES: contains repositories meta-data for the 5 versions of the datasets
