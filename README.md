@@ -46,8 +46,11 @@ Execute the SQL scripts of the [sql](sql/) folder in the correct order (follow t
 - `2_2_SQL_NOSQL_DATASET_REPOSITORIES.sql`: fill the SQL_NOSQL_DATASET_REPOSITORIES table with the information of the filtered repositories. It will be used to filter the remaining repositories according to different quality criteria (e.g. number of contributors, creation date). You'll have to give the dataset version as input to the query (e.g. 20170721).
 - `2_3_SQL_NOSQL_REPOSITORY_WITH_DBMS.sql`: insert the repositories in the SQL_NOSQL_REPOSITORY_WITH_DBMS table, and flag each repository for each database technology. If you analyse different database technologies, please update this SQL query.
 - `2_4_FILTERED_SQL_NOSQL_REPOSITORY_DEPENDENCIES.sql`: create the FILTERED_SQL_NOSQL_REPOSITORY_DEPENDENCIES table which contain the repositories respecting the quality criteria defined in the query. By default, it contains the repositories with a minimum size of 100kB, at least two contributors, and having been starred at least twice. You can change the filters by updating this SQL query.
+- `2_5_SURVIVAL_EVOLUTION.sql`: adapt the SQL_NOSQL_REPOSITORY_DEPENDENCIES table to permit the creation of SQL_NOSQL_DBMS_TYPE_SURVIVAL, SQL_NOSQL_DBMS_TYPE_SURVIVAL_ANALYSIS, SQL_NOSQL_DBMS_TYPE_SURVIVAL_ANALYSIS_REPO, SQL_NOSQL_DBMS_TYPE_SURVIVAL_ANALYSIS_REPO_GLOBAL tables.
 - `3_1_Analysis.sql`: query the database to retrieve the results observed in the paper. These queries are the same as the one in the Jupyter notebook. Update them according to your needs.
 
 **Important notes:** 
 - Previous "Database" steps can be executed for each version of LibrariesIO dataset, according to your needs. You'll have to merge all the data from the different versions to have a complete database as the one proposed in this repository.
+- `2_5_SURVIVAL_EVOLUTION.sql` SQL script is useless (as it analyses the evolution of data models between different versions of the repositories) until you merge the data from at least two versions of LibrariesIO datasets.
+- `3_1_Analysis.sql` SQL script contains several queries concerning the evolution of data models, making them useless until you merge the data from at least two versions of LibrariesIO datasets.
 - The proposed survey database can have different table names, but the content should be equivalent to the builded one.
