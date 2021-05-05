@@ -4,7 +4,7 @@ This repository is the replication package for the paper: "An Empirical Study of
 It permits to (rebuild and/or) use the survey database to replicate the observed results, and to filter/update/complete the dataset.
 
 ## Survey database
-The survey database is available on figshare, due to its size: [SQL_NoSQL_Survey.db](https://figshare.com/s/fb5c35279ab68ec52ffc)
+The survey SQLite database is available on figshare, due to its size: [SQL_NoSQL_Survey.db](https://figshare.com/s/fb5c35279ab68ec52ffc)
 
 Here is the description of the content of the different tables/views:
 #### Tables
@@ -34,7 +34,7 @@ The SQL scripts permit to rebuild the survey database from a [LibrariesIO](https
 
 #### Preliminaries
 - Download a dataset from [LibrariesIO](https://libraries.io/data)
-- Extract the `repository_dependencies` and `repositories` CSV files from the compressed folder and import them into a SQL database (keep the same names for the database tables)
+- Extract the `repository_dependencies` and `repositories` CSV files from the compressed folder and import them into a SQLite database (keep the same names for the database tables). **Note:** the following scripts have only been tested on a SQLite database.
 
 #### Database 
 Execute the SQL scripts of the [sql](sql/) folder in the correct order (follow the numbering). Here is a description of the content of each SQL script:
