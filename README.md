@@ -8,24 +8,33 @@ The survey **SQLite** database is available on figshare, due to its size: [SQL_N
 
 Here is the description of the content of the different tables/views:
 #### Tables
-- `SQL_NOSQL_DATASET_REPOSITORIES`: contains for each filtered repository and each dataset version some descriptive data (e.g. number of stars, keywords, licence).
+- `SQL_NOSQL_DATASET_REPOSITORIES`: contains for each database-dependent repository and each dataset version some descriptive data (e.g. number of stars, keywords, licence).
+- `SQL_NOSQL_DATASET_FILTERED_REPOSITORIES`: contains a subset of SQL_NOSQL_DATASET_REPOSITORIES table, only with the quality-filtered repositories.
 - `SQL_NOSQL_DBMS_TYPE_SURVIVAL`: contains for each repository the list of data model evolution (a bit code is used to represent the data model state before and after evolution: 1 for relational, 10 for document, 100 for key-value, 1000 for column, 10000 for graph data model. The states of repositories with multiple data models are represented by added bit codes).
 - `SQL_NOSQL_DBMS_TYPE_SURVIVAL_ANALYSIS`: contains for each category of data model evolution the number of repositories concerned by that evolution, the source and the target data model state and the type of evolution (addition, change or deletion of a data model).
 - `SQL_NOSQL_DBMS_TYPE_SURVIVAL_ANALYSIS_REPO`: contains for each evolved repository the first and the latest data model state and version (in the analysed dataset versions), two flags for the quality filtered repositories and the cyclic data model evolutions, plus some columns used to build the parallel class diagram.
 - `SQL_NOSQL_DBMS_TYPE_SURVIVAL_ANALYSIS_REPO_GLOBAL`: contains a updated copy of SQL_NOSQL_DBMS_TYPE_SURVIVAL_ANALYSIS_REPO table which is used to build the parallel class diagram.
+- `SQL_NOSQL_DBMS_TYPE_SURVIVAL_ANALYSIS_REPO_GLOBAL_NO_FORK`: contains a subset of SQL_NOSQL_DBMS_TYPE_SURVIVAL_ANALYSIS_REPO_GLOBAL table, without the forked repositories.
+- `SQL_NOSQL_DBMS_TYPE_SURVIVAL_ANALYSIS_REPO_GLOBAL_NO_DUPLICATE`: contains a subset of SQL_NOSQL_DBMS_TYPE_SURVIVAL_ANALYSIS_REPO_GLOBAL table, without the duplicated repositories.
 - `SQL_NOSQL_DEPENDENCY`: contains the list of database drivers used for this survey. It contains for each database driver the corresponding programming language, data model and database technology.
 - `SQL_NOSQL_REPOSITORY_DEPENDENCIES`: contains the list of database-dependent repositories and the corresponding database drivers.
 - `SQL_NOSQL_FILTERED_REPOSITORY_DEPENDENCIES`: contains the quality-filtered list of database-dependent repositories and the corresponding database drivers. It is a subset of SQL_NOSQL_REPOSITORY_DEPENDENCIES table.
+- `SQL_NOSQL_FILTERED_NO_FORK_REPOSITORY_DEPENDENCIES`: contains a subset of SQL_NOSQL_FILTERED_REPOSITORY_DEPENDENCIES table, without the forked repositories.
+- `SQL_NOSQL_FILTERED_NO_DUPLICATE_REPOSITORY_DEPENDENCIES`: contains a subset of SQL_NOSQL_FILTERED_REPOSITORY_DEPENDENCIES table, without the duplicated repositories.
 - `SQL_NOSQL_REPOSITORY_WITH_DBMS`: contains for each repository and each database technology a flag
 - `SQL_NOSQL_DISTINCT_REPOSITORY_DEPENDENCIES`: contains a subset of SQL_NOSQL_REPOSITORY_DEPENDENCIES table, without the duplicated results. Not used anymore.
-- `SQL_NOSQL_DISTINCT_FILTERED_REPOSITORY_DEPENDENCIES`: contains a copy of SQL_NOSQL_FILTERED_REPOSITORY_DEPENDENCIES table, without the duplicated results. Not used anymore.
+- `SQL_NOSQL_DISTINCT_FILTERED_REPOSITORY_DEPENDENCIES`: contains a subset of SQL_NOSQL_FILTERED_REPOSITORY_DEPENDENCIES table, without the duplicated results. Not used anymore.
 
 #### Views
 - `FILTERED_REPOSITORIES_VIEW`: temporary view containing the quality-filtered repositories.
 - `SQL_NOSQL_REPOSITORY_WITH_DBMS_TYPE`: equivalent to SQL_NOSQL_REPOSITORY_WITH_DBMS table but for the different data models. 
 
 ## Jupyter notebook
-A Jupyter notebook is available in the [jupyter_notebook](jupyter_notebook/SQL_NoSQL_Survey.ipynb) folder. Download the database (follow the instruction of the previous "Survey database" step), move it in the same folder than the Jupyter notebook file, and start using the notebook which contains all the prepared queries to replicate the results of the paper.
+Three Jupyter notebooks are available in the [jupyter_notebook](jupyter_notebook/) folder. Download the database (follow the instruction of the previous "Survey database" step), move it in the same folder than the Jupyter notebook files, and start using the notebooks which contains all the prepared queries to replicate the results of the paper.
+The different notebooks are :
+- `SQL_NoSQL_Survey.ipynb`: contains the prepared queries to replicate the results of the paper, for the filtered results (no forks nor duplicates are removed).
+- `SQL_NoSQL_Survey_No_Forks.ipynb`: contains the prepared queries to replicate the results of the paper, for the filtered results without the forked repositories.
+- `SQL_NoSQL_Survey_No_Duplicates.ipynb`: contains the prepared queries to replicate the results of the paper, for the filtered results without the duplicated repositories
 ![alt text](https://github.com/benatspo/Multi-database_Models/blob/main/img/jupyter_notebook.png?raw=true)
 The Jupyter notebook documentation is available [here](https://jupyter.org/install) (follow "Getting started with the classic Jupyter Notebook" section).
 
