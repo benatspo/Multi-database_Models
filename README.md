@@ -3,6 +3,8 @@ This repository is the replication package for the paper: "An Empirical Study of
 
 It permits to (rebuild and/or) use the survey database to replicate the observed results, and to filter/update/complete the dataset.
 
+The last filtering step concerning the duplicates is explained in details in the [duplicates_filtering](duplicates_filtering/) folder. 
+
 ## Survey database
 The survey **SQLite** database is available on figshare, due to its size: [SQL_NoSQL_Survey.db](https://figshare.com/s/fb5c35279ab68ec52ffc)
 
