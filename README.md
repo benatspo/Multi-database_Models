@@ -40,6 +40,9 @@ The different notebooks are :
 ![alt text](https://github.com/benatspo/Multi-database_Models/blob/main/img/jupyter_notebook.png?raw=true)
 The Jupyter notebook documentation is available [here](https://jupyter.org/install) (follow "Getting started with the classic Jupyter Notebook" section).
 
+## Duplicates identification and filtering description
+According to this [study](https://dl.acm.org/doi/pdf/10.1145/3133908), our survey could suffer from duplicated repositories and so bring incorrect results. To alleviate the potential noise of project duplicates, we analyzed, identified and filtered those projects and computed our results without the duplicated repositories. We introduced  the problem and we described the process of duplicates identification/filtering in a PDF document in the [duplicates_filtering](duplicates_filtering/) folder.
+
 ## SQL scripts
 The SQL scripts permit to rebuild the survey database from a [LibrariesIO](https://libraries.io/data) dataset. They are available in the [sql](sql/) folder.
 
