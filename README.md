@@ -34,7 +34,7 @@ Three Jupyter notebooks are available in the [jupyter_notebook](jupyter_notebook
 The different notebooks are :
 - `SQL_NoSQL_Survey.ipynb`: contains the prepared queries to replicate the results of the paper, for the filtered results (no forks nor duplicates are removed).
 - `SQL_NoSQL_Survey_No_Forks.ipynb`: contains the prepared queries to replicate the results of the paper, for the filtered results without the forked repositories.
-- `SQL_NoSQL_Survey_No_Duplicates.ipynb`: contains the prepared queries to replicate the results of the paper, for the filtered results without the duplicated repositories
+- `SQL_NoSQL_Survey_No_Duplicates.ipynb`: contains the prepared queries to replicate the results of the paper, for the filtered results without the duplicated repositories. Explanations for the duplicates identification and filtering are given [here](duplicates_filtering/).
 ![alt text](https://github.com/benatspo/Multi-database_Models/blob/main/img/jupyter_notebook.png?raw=true)
 The Jupyter notebook documentation is available [here](https://jupyter.org/install) (follow "Getting started with the classic Jupyter Notebook" section).
 
